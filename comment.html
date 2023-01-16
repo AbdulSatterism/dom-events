@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+
+<body>
+    <h2>add your comment, please!</h2>
+    <section>
+        <h4>your comments</h4>
+        <div id="comment-container">
+
+        </div>
+
+        <div>
+
+            <textarea name="" id="new-comment" cols="60" rows="4"></textarea>
+            <br>
+            <button id="post-button">post</button>
+        </div>
+    </section>
+
+    <script>
+        // add button event handler
+        document.getElementById('post-button').addEventListener('click', function () {
+            // get user comment
+            const commentBox = document.getElementById('new-comment');
+            // create element for comment
+            const p = document.createElement('p');
+            p.innerText = commentBox.value;
+            // append child for container
+            const addComment = document.getElementById('comment-container');
+            addComment.appendChild(p);
+            commentBox.value = ''
+        })
+
+    </script>
+
+</body>
+
+</html>

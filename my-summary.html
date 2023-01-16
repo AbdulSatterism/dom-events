@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my summary events today</title>
+</head>
+
+<body>
+    <h1>Welcome to my summary events</h1>
+    <button id="color-change">change background Color</button>
+    <br><br>
+    <p><small>write your comment here:</small></p>
+
+    <h3 id="write-comment"></h3>
+    <textarea name="" id="comment-box" cols="60" rows="4"></textarea>
+    <button id="post-button">post</button>
+
+    <!-- bubble section -->
+    <section id="list-container">
+        <ul id="items-container">
+            <li class="item">Lorem.</li>
+            <li class="item">Laborum!</li>
+            <li class="item">Consectetur?</li>
+            <li class="item">Qui?</li>
+        </ul>
+    </section>
+    <button id="add-button">add item</button>
+
+    <script>
+        // change color with click button
+        document.getElementById('color-change').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'gray'
+        })
+
+        // show input text in field or comment 
+        document.getElementById('post-button').addEventListener('click', function () {
+            const commetBox = document.getElementById('comment-box');
+            // console.log(commetBox.value)
+            const commentArea = document.getElementById('write-comment');
+            const h3 = document.createElement('h3');
+            h3.innerText = commetBox.value;
+            commentArea.appendChild(h3)
+
+            commetBox.value = ''
+        })
+
+        // add item
+        document.getElementById('add-button').addEventListener('click', function () {
+            const li = document.createElement('li');
+            li.innerText = 'added a new item'
+            const itemscontainer = document.getElementById('items-container');
+            itemscontainer.appendChild(li);
+        })
+
+        // add and remove 
+        document.getElementById('list-container').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target)
+        })
+    </script>
+</body>
+
+</html>
